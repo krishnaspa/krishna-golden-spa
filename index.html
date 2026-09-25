@@ -91,7 +91,7 @@ index.html<!DOCTYPE html>
 <script>
 function sendBooking(e){
   e.preventDefault();
-  const whatsappNumber = "91XXXXXXXXXX"; // Replace with your WhatsApp number
+  const whatsappNumber = "9115239723"; // Replace with your WhatsApp number
   const text = `Booking Request%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0APhone: ${encodeURIComponent(document.getElementById('phone').value)}%0AService: ${encodeURIComponent(document.getElementById('service').value)}%0ADate/Time: ${encodeURIComponent(document.getElementById('datetime').value)}%0AMessage: ${encodeURIComponent(document.getElementById('message').value)}`;
   window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
 }
