@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucknow Massage & Wellness</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,sans-serif;background:#f7f3ee;color:#2d2926}
+  header{padding:22px 18px;text-align:center;background:#6f4e37;color:white}
+  header h1{margin:0 0 8px;font-size:28px}
+  header p{margin:0;font-size:15px}
+  .hero{padding:42px 20px;text-align:center;background:white}
+  .hero h2{font-size:30px;margin:0 0 12px}
+  .hero p{line-height:1.6;max-width:620px;margin:0 auto 22px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:8px;background:#6f4e37;color:white;text-decoration:none;font-weight:bold}
+  .section{max-width:850px;margin:auto;padding:28px 18px}
+  .card{background:white;padding:22px;border-radius:14px;margin:14px 0;box-shadow:0 3px 14px #00000010}
+  .price{font-size:25px;font-weight:bold;margin:8px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  label{display:block;margin:12px 0 6px;font-weight:bold}
+  input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px}
+  button{border:0;cursor:pointer;margin-top:15px}
+  footer{text-align:center;padding:24px;background:#2d2926;color:white;font-size:14px}
+  .note{font-size:13px;color:#666}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lucknow Massage & Wellness</h1>
+  <p>Professional, non-sexual massage services</p>
+</header>
+
+<section class="hero">
+  <h2>Relax. Recover. Feel Better.</h2>
+  <p>Professional full-body massage appointments in Lucknow, with convenient home-service availability.</p>
+  <a class="btn" href="#booking">Book an Appointment</a>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Full-Body Massage</h3>
+      <div class="price">₹1,500 / 1 hour 30 minutes</div>
+      <p>Professional relaxation-focused full-body massage for 1 hour 30 minutes.</p>
+    </div>
+    <div class="card">
+      <h3>Home Service</h3>
+      <div class="price">₹1,500 / 1 hour 30 minutes</div>
+      <p>Book a professional massage appointment at your location in Lucknow for 1 hour 30 minutes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Opening Hours</h2>
+    <p><strong>10:00 AM – 10:00 PM</strong></p>
+    <p>Appointments are subject to availability.</p>
+  </div>
+</section>
+
+<section class="section" id="booking">
+  <div class="card">
+    <h2>Request a Booking</h2>
+    <form onsubmit="sendBooking(event)">
+      <label>Name</label>
+      <input id="name" required>
+      <label>Phone</label>
+      <input id="phone" type="tel" required>
+      <label>Service</label>
+      <select id="service">
+        <option>Full-Body Massage — ₹1,500 (1 hour 30 minutes)</option>
+        <option>Home Service — ₹1,500 (1 hour 30 minutes)</option>
+      </select>
+      <label>Preferred Date & Time</label>
+      <input id="datetime" type="datetime-local" required>
+      <label>Message</label>
+      <textarea id="message" rows="3" placeholder="Any appointment details"></textarea>
+      <button class="btn" type="submit">Send Booking Request</button>
+      <p class="note">Replace the WhatsApp number in the code with your own business number before publishing.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lucknow Massage & Wellness · Professional massage services
+</footer>
+
+<script>
+function sendBooking(e){
+  e.preventDefault();
+  const whatsappNumber = "91XXXXXXXXXX"; // Replace with your WhatsApp number
+  const text = `Booking Request%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0APhone: ${encodeURIComponent(document.getElementById('phone').value)}%0AService: ${encodeURIComponent(document.getElementById('service').value)}%0ADate/Time: ${encodeURIComponent(document.getElementById('datetime').value)}%0AMessage: ${encodeURIComponent(document.getElementById('message').value)}`;
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+}
+</script>
+</body>
+</html>
